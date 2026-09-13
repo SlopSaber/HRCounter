@@ -45,7 +45,7 @@
         </Reference>
         <Reference Include="Counters+">
             <Private>False</Private>
-            <HintPath>D:\BSManager\BSInstances\1.44.0\Plugins\Counters+.dll</HintPath>
+            <HintPath>$(BeatSaberDir)\Plugins\Counters+.dll</HintPath>
         </Reference>
         <Reference Include="DataModels">
             <Private>false</Private>
@@ -115,10 +115,6 @@
         </Reference>
         <Reference Include="UnityEngine.VRModule">
             <Private>False</Private>
-        </Reference>
-        <Reference Include="YUR.Fit.Unity">
-            <Private>False</Private>
-            <HintPath>D:\BSManager\BSInstances\1.11.1\Plugins\YUR.fit-BeatSaber-Mod.dll</HintPath>
         </Reference>
         <Reference Include="Zenject">
             <Private>False</Private>
