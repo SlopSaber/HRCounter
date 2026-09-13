@@ -15,7 +15,7 @@ internal class UserInfoHelper : IAsyncInitializable
     private readonly Logger _logger = null!;
 
     [Inject]
-    private readonly IPlatformUserModel _platformUserModel = null!;
+    private readonly UserInfo _gameUserInfo = null!;
 
     public UserInfo? UserInfo { get; private set; }
 
@@ -34,8 +34,7 @@ internal class UserInfoHelper : IAsyncInitializable
 
             try
             {
-                var userInfo = await _platformUserModel.GetUserInfo(token);
-                UserInfo = userInfo;
+                UserInfo = _gameUserInfo;
                 return;
             }
             catch (OperationCanceledException)

@@ -29,7 +29,10 @@ internal class HypeRate2 : WebSocketSource
     private readonly Logger _logger = null!;
 
     [Inject]
-    private readonly IPlatformUserModel _platformUserModel = null!;
+    private readonly UserInfo _userInfo = null!;
+
+    [Inject]
+    private readonly PlatformAuthenticationTokenProvider _tokenProvider = null!;
 
     protected override string Url => URL;
 
@@ -52,10 +55,9 @@ internal class HypeRate2 : WebSocketSource
 
     protected override async Task<bool> PrepareBeforeConnect(CancellationToken token)
     {
-        var userInfo = await _platformUserModel.GetUserInfo(token);
-        var authToken = await _platformUserModel.GetUserAuthToken();
-        _userId = userInfo.platformUserId;
-        switch (userInfo.platform)
+        var authToken = await _tokenProvider.GetXPlatformAccessToken(token);
+        _userId = _userInfo.platformUserId;
+        switch (_userInfo.platform)
         {
             case UserInfo.Platform.Steam:
                 _platform = "steam";
@@ -66,7 +68,7 @@ internal class HypeRate2 : WebSocketSource
                 _ticket = authToken.token ?? "";
                 break;
             default:
-                _logger.Notice($"Unsupported platform: {userInfo.platform}");
+                _logger.Notice($"Unsupported platform: {_userInfo.platform}");
                 return false;
         }
 

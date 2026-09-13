@@ -6,6 +6,7 @@ using IPA.Loader;
 using IPA.Logging;
 using SiraUtil.Zenject;
 using IPALogger = IPA.Logging.Logger;
+using Zenject;
 
 namespace HRCounter;
 
@@ -51,7 +52,9 @@ public class Plugin
 
         if (BeatLeaderMeta != null) zenject.Install<ReplayRecorderInstaller>(Location.Player);
 
-        zenject.Expose<FlyingGameHUDRotation>("Environment");
+        zenject.Expose<FlyingGameHUDRotation>(condition: (context, _) =>
+            context is SceneDecoratorContext sceneDecoratorContext &&
+            sceneDecoratorContext.DecoratedContractName == "Environment");
 
         LocalizationPatch.Patch();
 
