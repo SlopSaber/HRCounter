@@ -76,6 +76,9 @@
         <Reference Include="PlatformUserModel">
             <Private>false</Private>
         </Reference>
+        <Reference Include="OculusStudios.Platform.Core">
+            <Private>false</Private>
+        </Reference>
         <Reference Include="SiraUtil">
             <Private>False</Private>
             <HintPath>$(BeatSaberDir)\Plugins\SiraUtil.dll</HintPath>
