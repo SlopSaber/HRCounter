@@ -3,7 +3,7 @@
     <Import Project="$(MsBuildProjectFullPath).user" Condition="Exists('$(MsBuildProjectFullPath).user')"/>
     <PropertyGroup>
         <TargetFramework>net472</TargetFramework>
-        <BeatSaberDir Condition="'$(BeatSaberDir)' == ''">D:\BSManager\BSInstances\1.45.0</BeatSaberDir>
+        <BeatSaberDir Condition="'$(BeatSaberDir)' == ''">D:\BSManager\BSInstances\1.45.1</BeatSaberDir>
         <RootNamespace>HRCounter</RootNamespace>
         <AssemblyName>HRCounter</AssemblyName>
         <DebugType>portable</DebugType>
