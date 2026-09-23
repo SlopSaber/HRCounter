@@ -6,6 +6,6 @@
         <BSMTProjectType>BSIPA</BSMTProjectType>
         <GameDirectory>D:\BSManager\BSInstances\1.45.1</GameDirectory>
         <CopyPDB>false</CopyPDB>
-        <DisableCopyToGame>false</DisableCopyToGame>
+        <DisableCopyToGame>true</DisableCopyToGame>
     </PropertyGroup>
 </Project>
