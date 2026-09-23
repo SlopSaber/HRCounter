@@ -41,7 +41,7 @@ internal class GamePauseController : IInitializable, IDisposable
 
     private void OnHRUpdate(int hr)
     {
-        if (hr >= _config.PauseHR && _songControl?.IsPaused == false)
+        if (_config.AutoPause && hr >= _config.PauseHR && _songControl?.IsPaused == false)
         {
             _logger.Info("Heart Rate too high! Pausing!");
             _songControl?.Pause();
