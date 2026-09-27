@@ -30,11 +30,8 @@ internal class HttpHRHandler : IHttpRouteHandler
             var truncated = new string(buffer, 0, numChars);
             if (int.TryParse(truncated, out var number))
             {
-                _ = Task.Run(() =>
-                {
-                    var e = HeartRatePosted;
-                    e?.Invoke(this, number);
-                });
+                var handler = HeartRatePosted;
+                handler?.Invoke(this, number);
 
                 await context.SendResponseAsync("OK");
             }

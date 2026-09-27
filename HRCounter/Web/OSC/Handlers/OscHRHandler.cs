@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Threading.Tasks;
 using HRCounter.Configuration;
 using Zenject;
 
@@ -24,11 +23,8 @@ public class OscHRHandler : IOSCMessageHandler
 
         if (OSCHelper.TryReadInt32(data, ref offset, out var number))
         {
-            _ = Task.Run(() =>
-            {
-                var e = HeartRatePosted;
-                e?.Invoke(this, number);
-            });
+            var handler = HeartRatePosted;
+            handler?.Invoke(this, number);
         }
         else
         {
