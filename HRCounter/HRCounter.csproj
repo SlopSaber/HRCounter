@@ -1,9 +1,9 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
     <Import Project="$(MsBuildProjectFullPath).user" Condition="Exists('$(MsBuildProjectFullPath).user')"/>
     <PropertyGroup>
         <TargetFramework>net472</TargetFramework>
-        <BeatSaberDir Condition="'$(BeatSaberDir)' == ''">D:\BSManager\BSInstances\1.45.1</BeatSaberDir>
+        <BeatSaberDir Condition="'$(BeatSaberDir)' == ''">D:\BSManager\BSInstances\1.45.2</BeatSaberDir>
         <CountersPlusPath Condition="'$(CountersPlusPath)' == ''">$(BeatSaberDir)\Plugins\Counters+.dll</CountersPlusPath>
         <RootNamespace>HRCounter</RootNamespace>
         <AssemblyName>HRCounter</AssemblyName>
