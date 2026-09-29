@@ -4,6 +4,7 @@
     <PropertyGroup>
         <TargetFramework>net472</TargetFramework>
         <BeatSaberDir Condition="'$(BeatSaberDir)' == ''">D:\BSManager\BSInstances\1.45.1</BeatSaberDir>
+        <CountersPlusPath Condition="'$(CountersPlusPath)' == ''">$(BeatSaberDir)\Plugins\Counters+.dll</CountersPlusPath>
         <RootNamespace>HRCounter</RootNamespace>
         <AssemblyName>HRCounter</AssemblyName>
         <DebugType>portable</DebugType>
@@ -43,9 +44,9 @@
             <Private>False</Private>
             <HintPath>$(BeatSaberDir)\Plugins\BSML.dll</HintPath>
         </Reference>
-        <Reference Include="Counters+">
+        <Reference Include="$(CountersPlusPath)">
             <Private>False</Private>
-            <HintPath>$(BeatSaberDir)\Plugins\Counters+.dll</HintPath>
+            <HintPath>$(CountersPlusPath)</HintPath>
         </Reference>
         <Reference Include="DataModels">
             <Private>false</Private>

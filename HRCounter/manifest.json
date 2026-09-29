@@ -26,6 +26,7 @@
             "Description": "A Counter that displays your heart rate in game.",
             "MultiplayerReady": true,
             "CounterLocation": "HRCounter.HRCounterCountersPlus",
+            "PreviewLocation": "HRCounter.HRCounterCounterPreview",
             "ConfigDefaults": {
                 "Enabled": true,
                 "Position": "BelowCombo",
